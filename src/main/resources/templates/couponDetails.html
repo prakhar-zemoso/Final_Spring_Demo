@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <br>-->
+<!--    <a href="/logout">LogOut</a>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2>Coupon Details</h2>-->
+<!--CouponId:<b th:text = "${coupon.id}"></b><br>-->
+<!--Code:<b th:text = "${coupon.code}"></b><br>-->
+<!--Discount:<b th:text = "${coupon.discount}"></b>-->
+
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover">
+
+<h2>Coupon Details</h2>
+
+<table>
+    <tr>
+        <th>CouponId:</th>
+        <th>Code</th>
+        <th>Discount</th>
+    </tr>
+    <tr>
+        <td><b th:text = "${coupon.id}"></b></td>
+        <td><b th:text = "${coupon.code}"></b></td>
+        <td><b th:text = "${coupon.discount}"></b></td>
+    </tr>
+
+</table>
+<a href="/logout">LogOut</a>
+<br>
+<a href="/index">Back</a>
+
+</body>
+</html>

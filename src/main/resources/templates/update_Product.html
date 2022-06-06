@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Inster Here</title>
+</head>
+<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover">
+
+<div class="container">
+    <h1>Update Item in Cart</h1>
+    <hr>
+    <h2>Update Material</h2>
+
+    <form action="#" th:action="@{/saveProduct}" th:object="${product}"
+          method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" />
+
+
+
+            <input type="text" th:field="*{name}"
+                   placeholder="Name" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{description}"
+                   placeholder="Description" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{price}"
+                   placeholder="Price" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{coupon}"
+                   placeholder="Coupon Id" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Update Material </button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/}"> Back to your Item List</a>
+
+</div>
+
+</body>
+</html>

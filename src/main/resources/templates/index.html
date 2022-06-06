@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Home Page</title>
+
+</head>
+<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover">
+<br>
+<h1 style="text-align:center"><span >Welcome to Coupon World  </span> </h1><br><br>
+
+<div sec:authorize ="hasRole('ADMIN')">
+<br>
+    <h1 style="text-align:center" ><a th:href="@{/createCoupon}">Create Coupon</a></h1><br><br>
+
+</div>
+
+
+<h1 style="text-align:center"><a th:href="@{/showCoupon}">Get Coupon</a></h1><br><br>
+
+<h1 style="text-align:center"><a th:href="@{/productIndex}">Manage Your List</a></h1><br><br>
+<br>
+
+<div style="text-align:center">
+Logged in user: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b> <br><br><br><br>
+
+<form th:action="@{/logout}" method="POST">
+    <input type="submit" value="Logout"/>
+</form>
+</div>
+</body>
+
+</html>
+
+
+</body>
+</html>

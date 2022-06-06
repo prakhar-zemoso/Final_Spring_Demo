@@ -1,0 +1,122 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<html>-->
+<!--<head>-->
+<!--	<title>User Login</title>-->
+
+<!--</head>-->
+<!--<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover">-->
+
+
+<!--	<div style="text-align:center margin: auto;" class="container">-->
+<!--		<div class="row mt-8">-->
+<!--			<div class ="col-md-6 offset-md-3">-->
+
+
+<!--				<form  action = "/login" method="post", th:object ="${Logindata}">-->
+
+<!--					User Name :<input type="text" name="email" required>-->
+<!--					<br>-->
+<!--					Password : <input type="password" name ="password" required>-->
+<!--					<br>-->
+<!--					<button type="submit" class="btn btn-primary" value="login">Submit</button>-->
+<!--					<br><br>-->
+
+<!--					<a href="/showReg">Registration</a>-->
+<!--				</form>-->
+<!--			</div>-->
+<!--		</div>-->
+
+<!--	</div>-->
+
+
+
+<!--</body>-->
+
+
+
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.container {
+	text-align: center;
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover" >
+
+<h2 style="text-align: center; padding-top:16px;">Login Form</h2>
+
+
+
+
+<div class="container">
+
+		<form  action = "/login" method="post", th:object ="${Logindata}">
+
+			User Name :<input type="text" name="email" required>
+			<br>
+			Password : <input type="password" name ="password" required>
+			<br>
+			<button type="submit" class="btn btn-primary" value="login">Submit</button>
+			<br><br>
+
+			<a href="/regForm">Registration</a>
+		</form>
+	</div>
+
+<!--	<div class="container" style="background-color:#f1f1f1">-->
+<!--		<button type="button" class="cancelbtn">Cancel</button>-->
+
+
+</body>
+</html>

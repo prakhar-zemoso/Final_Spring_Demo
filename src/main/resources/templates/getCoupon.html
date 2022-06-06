@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover">
+
+<h2>Coupon Details</h2>
+<form action="/couponDetails" method="post">
+    Coupon Code<input name = "code" placeholder="Enter the Coupon Name">
+    <input type = "submit" value="get Coupon"/>
+    <div class="text-center">
+
+
+
+            <table>
+                 <tr>
+                        <th>CouponId:</th>
+                        <th>Code</th>
+                        <th>Discount</th>
+                 </tr>
+                <tr th:each = "coupon: ${result}">
+
+                        <td><b th:text = "${coupon.id}"></b></td>
+                        <td><b th:text = "${coupon.code}"></b></td>
+                        <td><b th:text = "${coupon.discount}"></b></td>
+                </tr>
+
+</table>
+<a href="/logout">LogOut</a>
+        <br>
+        <a href="/index">Back</a>
+
+</body>
+</html>
+
+
+
+
+
+
+<!--       Coupon Name <td th:text = "${coupon.code}"></td>-->
+<!--        <br>-->
+<!--        Coupon Id <td th:text = "${coupon.id}"></td>-->
+<!--        <br>-->
+<!--         Coupon Discount <td th:text = "${coupon.discount}"></td>-->
+<!--        <br>-->
+<!--</div>-->
+<!--    <br>-->
+<!--</form>-->
+
+<!--<a href="/logout">LogOut</a>-->
+<!--</body>-->
+<!--</html>-->

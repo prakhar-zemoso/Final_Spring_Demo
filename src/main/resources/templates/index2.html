@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Cart</title>
+</head>
+<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover">
+
+<h1>Product in List</h1>
+
+<div class="container my-2">
+    <!-- adding button-->
+    <div  class="text-left">
+    <a th:href = "@{/newProductForm}" class="btn btn-primary btn-sm mb-3">Add Product</a>
+    </div>
+
+
+    <table border = 1  class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "product: ${listProduct}">
+        <td th:text = "${product.name}"></td>
+        <td th:text = "${product.description}"></td>
+        <td th:text  = "${product.price}" ></td>
+
+
+            <td> <a th:href="@{/updateForm/{id}(id=${product.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteProduct/{id}(id=${product.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+
+
+        </tbody>
+
+
+    </table>
+
+    Total Amount = <p th:text = "${totalPrice}" ></p>
+    <br>
+
+
+    <div  class="text-center" >
+        <a  th:href = "@{/index}" class="btn btn-primary btn-sm mb-3">Back</a>
+
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

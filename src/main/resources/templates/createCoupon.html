@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+<a href="/logout">Log Out</a>
+<body style="background-image:url('https://img.freepik.com/free-psd/modern-gift-voucher-mockup_7956-139.jpg?w=1060');background-size:cover">
+<h2>Create Coupon</h2>
+<form th:action="saveCoupon" th:method="post">
+    Code:<input name = "code"/>
+    Discount:<input name = "discount"/>
+
+    <input type="Submit" value="savecoupon"/>
+</form>
+
+<br>
+<a href="/index">Back</a>
+
+</body>
+</html>
